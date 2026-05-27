@@ -37,10 +37,10 @@ justify-content: flex-end;
 width: 25%;
 padding-right: 30px;
 }
-.banner1{
-display: flex;
-justify-content: center;
-background-color: #F1E2D1;
+.banner1 {
+  display: flex;
+  justify-content: center;
+  background-color: #F1E2D1; 
 }
 .estudante_titulo{
 padding: 200px;
