@@ -12,15 +12,15 @@ color: white;
 width: 100%;
 padding: 20px;
 }
-.cabecalho-itens{
+.cabecalho_itens{
 max-width: 1980px;
 margin: 0 auto;
 display: flex;
 align-items: center;
 justify-content: center;
 }
-.cabecalho-imagem{
-width: 25%;
+.cabecalho_imagem{
+width: 10%;
 display: flex;
 justify-content: flex-start;
 align-items: center;
