@@ -40,7 +40,7 @@ header {
   display: flex;
   justify-content: flex-end; /* Corrigido o ponto e vírgula anterior */
   width: 25%;
-  gap: 20px; /* Cria um espaço entre os dois ícones */
+  gap: 25px; /* Cria um espaço entre os dois ícones */
 }
 
 /* Garante que os ícones fiquem com tamanho adequado dentro dos links */
