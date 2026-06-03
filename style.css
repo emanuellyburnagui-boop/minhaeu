@@ -24,7 +24,7 @@ width: 10%;
 display: flex;
 justify-content: flex-start;
 align-items: center;
-padding-right: 30px;
+padding-right: 25px;
 }
 .titulo_site{
 padding: 50px;
@@ -34,7 +34,7 @@ font: 70px;
 }
 .sociais{
 display: flex;
-justify-content: flex-end;
+space-around;
 width: 25%;
 padding-right: 30px;
 }
