@@ -34,7 +34,7 @@ font: 70px;
 }
 .sociais{
 display: flex;
-space-around;
+justify-content; space-around;
 width: 25%;
 padding-right: 30px;
 }
