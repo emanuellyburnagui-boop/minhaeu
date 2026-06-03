@@ -6,38 +6,49 @@ box-sizing: border-box;
 body{
 font-family: "Poppins", sans-serif;
 }
-header{
-background-color: #810B38;
-color: white;
-width: 100%;
-padding: 20px;
+header {
+  background-color: #810B38;
+  color: white;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box; /* Evita que o padding quebre a largura total */
 }
-.cabecalho_itens{
-max-width: 1980px;
-margin: 0 auto;
-display: flex;
-align-items: center;
-justify-content: center;
+
+.cabecalho_itens {
+  max-width: 1980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distribui os três blocos pelas extremidades */
 }
-.cabecalho_imagem{
-width: 10%;
-display: flex;
-justify-content: flex-start;
-align-items: center;
-padding-right: 25px;
+
+.cabecalho_imagem {
+  width: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-.titulo_site{
-padding: 50px;
-text-align: center;
-width: 50%;
-font: 70px;
+
+.titulo_site {
+  text-align: center;
+  font-size: 60px; /* Definido direto no CSS em vez de inline */
+  flex: 1; /* Força o título a ocupar o centro perfeitamente */
+  margin: 0;
 }
-.sociais{
-display: flex;
-justify-content; flex-end;
-width: 25%;
-padding-right: 30px;
+
+.sociais {
+  display: flex;
+  justify-content: flex-end; /* Corrigido o ponto e vírgula anterior */
+  width: 25%;
+  gap: 15px; /* Cria um espaço entre os dois ícones */
 }
+
+/* Garante que os ícones fiquem com tamanho adequado dentro dos links */
+.sociais img {
+  width: 40px; 
+  height: auto;
+}
+
 .banner1 {
   display: flex;
   justify-content: center;
