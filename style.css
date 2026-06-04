@@ -53,27 +53,28 @@ header {
 
 .banner1 {
   display: flex;
-  align-items: center;         /* Alinha a imagem e o texto verticalmente no meio */
-  justify-content: flex-start; /* Mantém os elementos colados a partir da esquerda */
-  gap: 30px;                   /* Cria um espaço de 30px entre a imagem e o texto */
+  align-items: center;         /* Mantém tudo alinhado verticalmente no meio */
   background-color: #F1E2D1; 
-  padding: 20px;               /* Adiciona um espaçamento interno na seção */
+  padding: 20px 40px;          /* Aumentado o espaçamento nas laterais */
 }
 
 .Minhaimagem {
-  max-width: 300px;            /* Define um limite de largura para a sua imagem */
-  height: auto;                /* Mantém a proporção original da imagem */
+  max-width: 300px;            
+  height: auto;                
 }
 
 .titulo_banner {
-  font-size: 40px;             /* Corrigido: adicionado o 'px' que faltava no HTML */
-  margin: 0;                   /* Remove margens padrão que desalinhariam o texto */
+  /* Altera a fonte. Substitua pelo nome exato instalado na sua máquina se necessário */
+  font-family: 'Stylish Calligraphy Demo', 'Alex Brush', cursive; 
+  font-size: 55px;             /* Fontes caligráficas costumam ser menores, aumentei para destacar */
+  margin: 0 auto;              /* O 'auto' nas laterais centraliza o texto no espaço disponível */
+  font-weight: normal;         /* Deixa a caligrafia mais natural e menos grossa */
 }
 
 .hellokitty {
   max-width: 100px;
   height: auto;
-  justify-content: flex-end;
+  margin-left: auto;           /* Truque do Flexbox: empurra a Hello Kitty totalmente para a direita */
 }
 
 
