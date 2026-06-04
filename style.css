@@ -49,11 +49,30 @@ header {
   height: auto;
 }
 
+
+
 .banner1 {
   display: flex;
-  justify-content: center;
+  align-items: center;         /* Alinha a imagem e o texto verticalmente no meio */
+  justify-content: flex-start; /* Mantém os elementos colados a partir da esquerda */
+  gap: 30px;                   /* Cria um espaço de 30px entre a imagem e o texto */
   background-color: #F1E2D1; 
+  padding: 20px;               /* Adiciona um espaçamento interno na seção */
 }
+
+.Minhaimagem {
+  max-width: 300px;            /* Define um limite de largura para a sua imagem */
+  height: auto;                /* Mantém a proporção original da imagem */
+}
+
+.titulo_banner {
+  font-size: 40px;             /* Corrigido: adicionado o 'px' que faltava no HTML */
+  margin: 0;                   /* Remove margens padrão que desalinhariam o texto */
+}
+
+
+
+
 .estudante_titulo{
 padding: 200px;
 text-align: center;
