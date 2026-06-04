@@ -65,7 +65,7 @@ header {
 
 .titulo_banner {
   /* Altera a fonte. Substitua pelo nome exato instalado na sua máquina se necessário */
-  font-family: 'Edwardian Script ITC', 'Alex Brush', cursive; 
+  font-family: 'Edwardian Script ITC', cursive; 
   font-size: 55px;             /* Fontes caligráficas costumam ser menores, aumentei para destacar */
   margin: 0 auto;              /* O 'auto' nas laterais centraliza o texto no espaço disponível */
   font-weight: normal;         /* Deixa a caligrafia mais natural e menos grossa */
