@@ -54,7 +54,7 @@ header {
 .banner1 {
   display: flex;
   align-items: center;         /* Alinha a imagem e o texto verticalmente no meio */
-  justify-content: center; /* Mantém os elementos colados a partir da esquerda */
+  justify-content: flex-start; /* Mantém os elementos colados a partir da esquerda */
   gap: 30px;                   /* Cria um espaço de 30px entre a imagem e o texto */
   background-color: #F1E2D1; 
   padding: 20px;               /* Adiciona um espaçamento interno na seção */
@@ -70,7 +70,11 @@ header {
   margin: 0;                   /* Remove margens padrão que desalinhariam o texto */
 }
 
-
+.hellokitty {
+  max-width: 100px;
+  height: auto;
+  justify-content: flex-end;
+}
 
 
 .estudante_titulo{
