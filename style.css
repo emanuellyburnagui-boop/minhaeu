@@ -39,7 +39,7 @@ header {
 .sociais {
   display: flex;
   justify-content: flex-end; 
-  width: 60px;
+  width: 80px;
   gap: 30px; /* Cria um espaço entre os dois ícones */
 }
 
