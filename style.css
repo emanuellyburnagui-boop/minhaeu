@@ -38,8 +38,8 @@ header {
 
 .sociais {
   display: flex;
-  justify-content: flex-end; /* Corrigido o ponto e vírgula anterior */
-  width: 30%;
+  justify-content: flex-end; 
+  width: 60px;
   gap: 30px; /* Cria um espaço entre os dois ícones */
 }
 
