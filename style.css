@@ -83,10 +83,10 @@ padding: 200px;
 text-align: center;
 
 }
-.estudante-nome{
+.djavan-nome{
 text-align: center;
 }
-.estudante-imagem{
+.djavan-imagem{
 width: 120px;
 }
 .estudante-icone{
@@ -102,7 +102,7 @@ padding: 24px 0;
 text-align: center;
 padding: 24px 0;
 }
-.estudantes_todos{
+.eu_todos{
 display: flex;
 justify-content: space-around;
 }
