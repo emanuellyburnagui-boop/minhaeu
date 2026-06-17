@@ -40,7 +40,7 @@ header {
   display: flex;
   justify-content: flex-end; /* Corrigido o ponto e vírgula anterior */
   width: 30%;
-  gap: 25px; /* Cria um espaço entre os dois ícones */
+  gap: 30px; /* Cria um espaço entre os dois ícones */
 }
 
 /* Garante que os ícones fiquem com tamanho adequado dentro dos links */
@@ -59,7 +59,7 @@ header {
 }
 
 .Minhaimagem {
-  max-width: 300px;            
+  max-width: 350px;            
   height: auto;                
 }
 
@@ -72,7 +72,7 @@ header {
 }
 
 .hellokitty {
-  max-width: 100px;
+  max-width: 110px;
   height: auto;
   margin-left: auto;           /* Truque do Flexbox: empurra a Hello Kitty totalmente para a direita */
 }
