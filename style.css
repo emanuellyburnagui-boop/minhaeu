@@ -40,7 +40,7 @@ header {
   display: flex;
   justify-content: flex-end; 
   gap: 30px; /* Cria um espaço entre os dois ícones */
-  width: 70px;
+  width: 60px;
 }
 
 
@@ -80,7 +80,7 @@ text-align: center;
 text-align: center;
 }
 .imagens{
-width: 80px;
+width: 50px;
 }
 .estudante-icone{
 width: 38px;
