@@ -40,7 +40,7 @@ header {
   display: flex;
   justify-content: flex-end; 
   gap: 30px; /* Cria um espaço entre os dois ícones */
-  width: 80px;
+  width: 70px;
 }
 
 
@@ -80,7 +80,7 @@ text-align: center;
 text-align: center;
 }
 .djavan-imagem{
-width: 120px;
+width: 90px;
 }
 .estudante-icone{
 width: 38px;
