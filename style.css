@@ -40,14 +40,8 @@ header {
   display: flex;
   justify-content: flex-end; 
   gap: 30px; /* Cria um espaço entre os dois ícones */
+  width: 80px;
 }
-
-/* Garante que os ícones fiquem com tamanho adequado dentro dos links */
-.sociais img {
-  width: 60px; 
-  height: auto;
-}
-
 
 
 .banner1 {
