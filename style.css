@@ -31,7 +31,7 @@ header {
 
 .titulo_site {
   text-align: center;
-  font-size: 60px; /* Definido direto no CSS em vez de inline */
+  font-size: 60px; 
   flex: 1; /* Força o título a ocupar o centro perfeitamente */
   margin: 0;
 }
@@ -80,7 +80,7 @@ text-align: center;
 text-align: center;
 }
 .imagens{
-width: 100px;
+width: 200px;
 }
 .estudante-icone{
 width: 38px;
