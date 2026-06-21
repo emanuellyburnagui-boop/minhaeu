@@ -43,13 +43,22 @@ header {
   width: 60px;
 }
 
-
-.banner1 {
-  display: flex;
-  align-items: center;         /* Mantém tudo alinhado verticalmente no meio */
-  background-color: #F1E2D1; 
-  padding: 20px 40px;          /* Aumentado o espaçamento nas laterais */
+.banner1 { 
+    display: flex; 
+    align-items: center; 
+    background-color: #F1E2D1; 
+    padding: 0; /* Remove o espaçamento que impedia a imagem de tocar as bordas */
+    width: 100%; /* Garante que o banner ocupe toda a largura disponível */
+    overflow: hidden; /* Evita barras de rolagem indesejadas */
 }
+
+.Bannerimagem {
+    width: 100%; /* Faz a imagem ocupar 100% da largura do banner */
+    height: auto; /* Mantém a proporção correta da foto sem distorcer */
+    display: block; /* Remove espaços vazios na parte inferior da imagem */
+    object-fit: cover; /* Garante o preenchimento completo do espaço */
+}
+
 
 .Minhaimagem {
   max-width: 350px;            
@@ -64,23 +73,12 @@ header {
   font-weight: normal;         /* Deixa a caligrafia mais natural e menos grossa */
 }
 
-.hellokitty {
-  max-width: 200px;
-  height: auto;
-  margin-left: auto;           /* Truque do Flexbox: empurra a Hello Kitty totalmente para a direita */
-}
 
 
 .estudante_titulo{
 padding: 200px;
 text-align: center;
 
-}
-.djavan-nome{
-text-align: center;
-}
-.imagens{
-width: 200px;
 }
 .estudante-icone{
 width: 38px;
