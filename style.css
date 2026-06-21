@@ -87,10 +87,28 @@ padding: 24px 0;
 text-align: center;
 padding: 24px 0;
 }
-.eu_todos{
-display: flex;
-flex-direction: column;
+
+
+.estudante_todos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas iguais */
+    gap: 24px; /* Adiciona espaçamento entre os cartões */
+    padding: 24px;
+    background-color: #F1E2D1;
 }
+
+
+/* O espaço dedicado para a foto no meio */
+.container-foto {
+    width: 120px; /* Altere para o tamanho desejado */
+    height: 120px;
+    margin: 15px 0; /* Cria o espaçamento acima e abaixo da foto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .escola{
 background-image: linear-gradient(#541A1A);
 color: white;
