@@ -53,10 +53,13 @@ header {
 }
 
 .Bannerimagem {
-    width: 100%; /* Faz a imagem ocupar 100% da largura do banner */
+    width: 80px; /* Faz a imagem ocupar 100% da largura do banner */
     height: auto; /* Mantém a proporção correta da foto sem distorcer */
     display: block; /* Remove espaços vazios na parte inferior da imagem */
     object-fit: cover; /* Garante o preenchimento completo do espaço */
+    display: flex;
+    justify-content: center;
+
 }
 
 
@@ -123,10 +126,10 @@ padding: 50px;
 text-align: center;
 }
 .logo_rodape{
-height: 80px;
-padding: 12px 0;
-display: flex-start;
-
+width: 5%;
+display: flex;
+justify-content: flex-start;
+align-items: center;
 }
 
 .link{
