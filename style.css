@@ -92,24 +92,31 @@ padding: 24px 0;
 }
 
 
-.estudante_todos{
+.estudante_todos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas iguais */
-    gap: 24px; /* Adiciona espaçamento entre os cartões */
-    padding: 24px;
+    /* Altera para 3 colunas: esquerda dinâmica, meio fixa em 80px, direita dinâmica */
+    grid-template-columns: 1fr 80px 1fr; 
+    gap: 24px; 
+    padding: 24px; 
     background-color: #F1E2D1;
+    align-items: center; /* Centraliza verticalmente todos os itens da linha */
 }
 
-
-/* O espaço dedicado para a foto no meio */
 .container-foto {
-    width: 80px; /* Altere para o tamanho desejado */
+    width: 80px; 
     height: 120px;
-    margin: 15px 0; /* Cria o espaçamento acima e abaixo da foto */
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+/* Garante que a imagem dentro do container preencha o espaço corretamente */
+.container-foto .estudante-imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que a foto fique distorcida */
+}
+
 
 
 .escola{
