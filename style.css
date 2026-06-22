@@ -103,7 +103,7 @@ padding: 24px 0;
 
 /* O espaço dedicado para a foto no meio */
 .container-foto {
-    width: 120px; /* Altere para o tamanho desejado */
+    width: 80px; /* Altere para o tamanho desejado */
     height: 120px;
     margin: 15px 0; /* Cria o espaçamento acima e abaixo da foto */
     display: flex;
@@ -126,7 +126,7 @@ padding: 50px;
 text-align: center;
 }
 .logo_rodape{
-width: 5%;
+width: 2%;
 display: flex;
 justify-content: flex-start;
 align-items: center;
