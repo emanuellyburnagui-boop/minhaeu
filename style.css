@@ -34,7 +34,7 @@ justify-content: center;
 padding: 20px;
 text-align: center;
 width: 100%;
-font: 150px;
+font-size: 150px;
 }
 
 .sociais{
@@ -82,7 +82,7 @@ text-align: center;
 .coluna-estudantes {
   display: flex;
   flex-direction: column;
-  gap: 20px;            /* Espaçamento vertical entre um card de aluno e outro */
+  gap: 28px;            /* Espaçamento vertical entre um card de aluno e outro */
 }
 
 /* Força a sua foto a ocupar 100% da largura disponível da coluna dela */
