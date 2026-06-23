@@ -6,117 +6,71 @@ box-sizing: border-box;
 body{
 font-family: "Poppins", sans-serif;
 }
-header {
-  background-color: #810B38;
-  color: white;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box; /* Evita que o padding quebre a largura total */
+header{
+background-color: #424e61;
+color: white;
+width: 100%;
+padding: 20px;
 }
-
-.cabecalho_itens {
-  max-width: 1980px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Distribui os três blocos pelas extremidades */
+.cabecalho-itens{
+max-width: 1980px;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: center;
 }
-
-.cabecalho_imagem {
-  width: 5%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+.cabecalho-imagem{
+width: 10%;
+display: flex;
+justify-content: flex-start;
+align-items: center;
 }
-
-.titulo_site {
-  text-align: center;
-  font-size: 60px; 
-  flex: 1; /* Força o título a ocupar o centro perfeitamente */
-  margin: 0;
+.titulo_site{
+padding: 50px;
+text-align: center;
+width: 50%;
+font: 30px;
 }
-
-.sociais {
-  display: flex;
-  justify-content: flex-end; 
-  gap: 30px; /* Cria um espaço entre os dois ícones */
-  width: 60px;
+.sociais{
+display: flex;
+justify-content: flex-end;
+width: 25%;
+padding-right: 30px;
 }
-
-.banner1 { 
-    display: flex; 
-    align-items: center; 
-    background-color: #F1E2D1; 
-    padding: 0; /* Remove o espaçamento que impedia a imagem de tocar as bordas */
-    width: 100%; /* Garante que o banner ocupe toda a largura disponível */
-    overflow: hidden; /* Evita barras de rolagem indesejadas */
+.banner1{
+display: flex;
+justify-content: center;
 }
-
-.Bannerimagem {
-    width: 80px; /* Faz a imagem ocupar 100% da largura do banner */
-    height: auto; /* Mantém a proporção correta da foto sem distorcer */
-    display: block; /* Remove espaços vazios na parte inferior da imagem */
-    object-fit: cover; /* Garante o preenchimento completo do espaço */
-    display: flex;
-    justify-content: center;
+.estudante_titulo{
+padding: 50px;
+text-align: center;
 
 }
-
-
-.Minhaimagem {
-  max-width: 350px;            
-  height: auto;                
+.estudante-nome{
+text-align: center;
 }
-
-.titulo_banner {
-  /* Altera a fonte. Substitua pelo nome exato instalado na sua máquina se necessário */
-  font-family: 'Edwardian Script ITC', cursive; 
-  font-size: 70px;             /* Fontes caligráficas costumam ser menores, aumentei para destacar */
-  margin: 0 auto;              /* O 'auto' nas laterais centraliza o texto no espaço disponível */
-  font-weight: normal;         /* Deixa a caligrafia mais natural e menos grossa */
+.estudante-imagem{
+width: 120px;
 }
-
-
 .estudante-icone{
 width: 38px;
 padding: 4px 8px;
 }
 .estudante{
-background-image: background-color(#F1E2D1);
+background-image: background-color(#faae43);
 padding: 24px 0;
 }
 
 .estudante.div{
 text-align: center;
-padding: 2
+padding: 24px 0;
 }
-
-.estudante_todos {
-  display: grid; 
-  grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas iguais */
-  gap: 24px; /* Adiciona espaçamento entre os cartões */
-  padding: 24px;
-   align-items: center;
+.estudantes_todos{
+display: flex;
+justify-content: space-around;
 }
-
-.container-foto {
-  width: 80px;
-  height: 120px;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10; /* Garante que a foto fique por cima do fundo */
-}
-
-.container-foto .estudante-imagem {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
 .escola{
-background-image: linear-gradient(#541A1A);
+background-image: linear-gradient(#40A2E3,#7FC2EF);
 color: white;
 display: flex;
 justify-content:center;
@@ -129,10 +83,9 @@ padding: 50px;
 text-align: center;
 }
 .logo_rodape{
-width: 20px;
-display: flex;
-justify-content: flex-start;
-align-items: center;
+height: 80px;
+padding: 12px 0;
+
 }
 
 .link{
