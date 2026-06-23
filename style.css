@@ -23,12 +23,11 @@ align-items: center;
 justify-content: center;
 }
 
-.cabecalho-imagem{
-width: 20px;
-display: flex;
-justify-content: flex-start;
-align-items: center;
-object-fit: cover;
+.cabecalho_imagem {
+  width: 30px;          /* Define a largura da foto */
+  height: 30px;         /* Mantém a altura idêntica para o círculo ficar perfeito */
+  border-radius: 50%;   /* Corta a imagem em formato redondo */
+  object-fit: cover;    /* Evita que a foto fique distorcida ou amassada */
 }
 
 .titulo_site{
