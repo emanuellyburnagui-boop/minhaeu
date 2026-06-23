@@ -61,6 +61,40 @@ padding: 50px;
 text-align: center;
 
 }
+
+
+
+/* Alinha as 3 colunas principais lado a lado */
+.container-secao {
+  display: flex;
+  gap: 24px;            /* Espaçamento horizontal entre as 3 colunas */
+  align-items: center;  /* Centraliza verticalmente as colunas (opcional) */
+  width: 100%;
+}
+
+/* Define que as colunas laterais e a central terão o mesmo tamanho flexível */
+.coluna-estudantes, 
+.coluna-foto-central {
+  flex: 1;              /* Distribui o espaço igualmente (33% para cada) */
+}
+
+/* Organiza os blocos de estudantes um abaixo do outro dentro de suas colunas */
+.coluna-estudantes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;            /* Espaçamento vertical entre um card de aluno e outro */
+}
+
+/* Força a sua foto a ocupar 100% da largura disponível da coluna dela */
+.minha-foto {
+  width: 100%;
+  height: auto;         /* Mantém a proporção da foto sem distorcer */
+  display: block;
+  border-radius: 8px;   /* Cantos arredondados opcionais para combinar */
+}
+
+
+
 .estudante-nome{
 text-align: center;
 }
