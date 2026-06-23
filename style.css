@@ -96,6 +96,7 @@ padding: 2
   grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas iguais */
   gap: 24px; /* Adiciona espaçamento entre os cartões */
   padding: 24px;
+   align-items: center;
 }
 
 .container-foto {
@@ -104,8 +105,16 @@ padding: 2
   display:flex;
   align-items: center;
   justify-content: center;
-
+  z-index: 10; /* Garante que a foto fique por cima do fundo */
 }
+
+.container-foto .estudante-imagem {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
 .escola{
 background-image: linear-gradient(#541A1A);
 color: white;
