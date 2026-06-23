@@ -9,7 +9,7 @@ font-family: "Poppins", sans-serif;
 }
 
 header{
-background-color: #424e61;
+background-color: #DC143C;
 color: white;
 width: 100%;
 padding: 20px;
@@ -24,14 +24,14 @@ justify-content: center;
 }
 
 .cabecalho_imagem {
-  width: 30px;          /* Define a largura da foto */
-  height: 30px;         /* Mantém a altura idêntica para o círculo ficar perfeito */
+  width: 60px;          /* Define a largura da foto */
+  height: 60px;         /* Mantém a altura idêntica para o círculo ficar perfeito */
   border-radius: 50%;   /* Corta a imagem em formato redondo */
   object-fit: cover;    /* Evita que a foto fique distorcida ou amassada */
 }
 
 .titulo_site{
-padding: 80px;
+padding: 120px;
 text-align: center;
 width: 50%;
 font: 30px;
@@ -85,7 +85,7 @@ display: flex;
 justify-content: space-around;
 }
 .escola{
-background-image: linear-gradient(#40A2E3,#7FC2EF);
+background-image: linear-gradient(#a4e340,#83ef7f);
 color: white;
 display: flex;
 justify-content:center;
@@ -98,10 +98,10 @@ padding: 50px;
 text-align: center;
 }
 .logo_rodape{
-display: flex;
-justify-content: flex-start;
-height: 80px;
-padding: 12px 0;
+ width: 60px;          /* Define a largura da foto */
+  height: 60px;         /* Mantém a altura idêntica para o círculo ficar perfeito */
+  border-radius: 50%;   /* Corta a imagem em formato redondo */
+  object-fit: cover;
 
 }
 
