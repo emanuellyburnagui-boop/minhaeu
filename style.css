@@ -90,7 +90,7 @@ text-align: center;
   width: 100%;
   height: auto;         /* Mantém a proporção da foto sem distorcer */
   display: block;
-  border-radius: 8px;   /* Cantos arredondados opcionais para combinar */
+  border-radius: 10px;   /* Cantos arredondados */
 }
 
 
