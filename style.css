@@ -24,14 +24,14 @@ justify-content: center;
 }
 
 .cabecalho_imagem {
-  width: 60px;          /* Define a largura da foto */
-  height: 60px;         /* Mantém a altura idêntica para o círculo ficar perfeito */
+  width: 120px;          /* Define a largura da foto */
+  height: 120px;         /* Mantém a altura idêntica para o círculo ficar perfeito */
   border-radius: 50%;   /* Corta a imagem em formato redondo */
   object-fit: cover;    /* Evita que a foto fique distorcida ou amassada */
 }
 
 .titulo_site{
-padding: 120px;
+padding: 200px;
 text-align: center;
 width: 50%;
 font: 30px;
