@@ -28,7 +28,6 @@ width: 20px;
 display: flex;
 justify-content: flex-start;
 align-items: center;
-border-radius: 50%;
 object-fit: cover;
 }
 
@@ -42,13 +41,22 @@ font: 30px;
 .sociais{
 display: flex;
 justify-content: flex-end;
-width: 25%;
+width: 25px;
 padding-right: 30px;
 }
+
 .banner1{
 display: flex;
 justify-content: center;
+width: 100%;
 }
+
+.escola-img {
+  width: 100vw; /* Utiliza 100% da largura visual da tela */
+  height: auto; /* Mantém a proporção da foto sem distorcer */
+  object-fit: cover;
+}
+
 .estudante_titulo{
 padding: 50px;
 text-align: center;
@@ -91,6 +99,8 @@ padding: 50px;
 text-align: center;
 }
 .logo_rodape{
+display: flex;
+justify-content: flex-start;
 height: 80px;
 padding: 12px 0;
 
