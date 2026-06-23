@@ -31,10 +31,10 @@ justify-content: center;
 }
 
 .titulo_site{
-padding: 150px;
+padding: 80px;
 text-align: center;
 width: 50%;
-font: 150px;
+font: 200px;
 }
 
 .sociais{
@@ -82,7 +82,7 @@ text-align: center;
 .coluna-estudantes {
   display: flex;
   flex-direction: column;
-  gap: 16px;            /* Espaçamento vertical entre um card de aluno e outro */
+  gap: 20px;            /* Espaçamento vertical entre um card de aluno e outro */
 }
 
 /* Força a sua foto a ocupar 100% da largura disponível da coluna dela */
