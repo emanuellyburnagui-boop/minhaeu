@@ -9,7 +9,7 @@ font-family: "Poppins", sans-serif;
 }
 
 header{
-background-color: #DC143C;
+background-color: #F75270;
 color: white;
 width: 100%;
 padding: 20px;
@@ -85,7 +85,7 @@ display: flex;
 justify-content: space-around;
 }
 .escola{
-background-image: linear-gradient(#a4e340,#83ef7f);
+background-image: linear-gradient(#F7CAC9,#FDEBD0);
 color: white;
 display: flex;
 justify-content:center;
