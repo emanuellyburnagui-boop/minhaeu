@@ -31,16 +31,16 @@ justify-content: center;
 }
 
 .titulo_site{
-padding: 200px;
+padding: 50px;
 text-align: center;
 width: 50%;
-font: 30px;
+font: 120px;
 }
 
 .sociais{
 display: flex;
 justify-content: flex-end;
-width: 50px;
+width: 100px;
 padding-right: 30px;
 }
 
