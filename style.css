@@ -158,12 +158,12 @@ margin-bottom: 15px;
   align-items: center;    /* Centraliza o vídeo e o título horizontalmente */
   justify-content: center;
   margin-top: 40px;       /* Cria um espaçamento seguro do texto acima */
-  margin-bottom: 20px;    /* Espaçamento opcional em relação ao fim da página *
+  margin-bottom: 20px;    /* Espaçamento opcional em relação ao fim da página */
   max-width: 100%;
 }
 
 .logo_rodape{
- width: 60px;          /* Define a largura da foto */
+  width: 60px;          /* Define a largura da foto */
   height: 60px;         /* Mantém a altura idêntica para o círculo ficar perfeito */
   border-radius: 50%;   /* Corta a imagem em formato redondo */
   object-fit: cover;
