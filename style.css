@@ -140,6 +140,20 @@ display:block;
 padding: 50px;
 text-align: center;
 }
+
+.titulo-video{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*fonte*/
+font-size: 20px;
+font-weight: bold;
+color:#333333;
+text-align: flex-end;
+margin-bottom: 15px;
+}
+
+.container-video{
+  
+}
+
 .logo_rodape{
  width: 60px;          /* Define a largura da foto */
   height: 60px;         /* Mantém a altura idêntica para o círculo ficar perfeito */
