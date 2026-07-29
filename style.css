@@ -87,10 +87,10 @@ text-align: center;
 
 /* Força a sua foto a ocupar 100% da largura disponível da coluna dela */
 .minha-foto {
-  width: 100%;
+ / width: 100%;
   height: auto;         /* Mantém a proporção da foto sem distorcer */
   display: block;
-  border-radius: 10px;   /* Cantos arredondados */
+  border-radius: 10px;   /* Cantos arredondados *
 }
 
 
@@ -151,7 +151,15 @@ margin-bottom: 15px;
 }
 
 .container-video{
-
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column; /* Empilha o vídeo e o título H3 verticalmente */
+  align-items: center;    /* Centraliza o vídeo e o título horizontalmente */
+  justify-content: center;
+  margin-top: 40px;       /* Cria um espaçamento seguro do texto acima */
+  margin-bottom: 20px;    /* Espaçamento opcional em relação ao fim da página *
+  max-width: 100%;
 }
 
 .logo_rodape{
