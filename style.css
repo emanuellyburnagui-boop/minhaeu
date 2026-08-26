@@ -135,7 +135,7 @@ text-align: center;
 
 /* Força a sua foto a ocupar 100% da largura disponível da coluna dela */
 .minha-foto {
- / width: 100%;
+  width: 100%;
   height: auto;         /* Mantém a proporção da foto sem distorcer */
   display: block;
   border-radius: 10px;   /* Cantos arredondados *
@@ -199,7 +199,16 @@ margin-bottom: 15px;
 }
 
 .livros{
-  
+  width: 100%;
+  height: auto;         /* Mantém a proporção da foto sem distorcer */
+  display: block;
+  border-radius: 10px;   /* Cantos arredondados */
+}
+
+.resumo-livros{
+  font-size: 12px;       /* Deixa o texto menor que o título */
+  font-weight: normal;   /* Remove o negrito do texto */
+  line-height: 1.5;      /* Melhora o espaçamento entre as linhas da frase */
 }
 
 .container-video{
