@@ -203,6 +203,9 @@ margin-bottom: 15px;
   height: auto;         /* Mantém a proporção da foto sem distorcer */
   display: block;
   border-radius: 10px;   /* Cantos arredondados */
+  align-items: center;   /* Alinha a imagem e o texto verticalmente pelo meio */
+  gap: 20px;             /* Cria um espaço entre a imagem e o texto */
+  display: flex;         /* Coloca os elementos filhos lado a lado */
 }
 
 .resumo-livros{
