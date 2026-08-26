@@ -213,6 +213,7 @@ margin-bottom: 15px;
   font-size: 12px;       /* Deixa o texto menor que o título */
   font-weight: normal;   /* Remove o negrito do texto */
   line-height: 1.5;      /* Melhora o espaçamento entre as linhas da frase */
+  display: flex;
 }
 
 .div-livros{
