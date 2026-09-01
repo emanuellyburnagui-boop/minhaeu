@@ -258,45 +258,53 @@ margin-bottom: 15px;
 /* Container principal que gerencia a grade */
 .grade-container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 300px)); /* Limita a largura mínima e máxima de cada coluna */
-  justify-content: center; /* Centraliza as 3 colunas perfeitamente no meio da página */
-  gap: 30px; /* Espaço entre as fotos (tanto horizontal quanto vertical) */
-  margin: 0 auto; /* Alinhamento de segurança para centralizar o bloco na tela */
+  grid-template-columns: repeat(3, minmax(200px, 300px)); /* Mantém as 3 colunas com tamanho controlado */
+  justify-content: center; /* Centraliza as 3 colunas no meio da tela */
+  gap: 30px; /* Espaço entre os blocos */
+  margin: 0 auto;
   padding: 40px 20px;
 }
 
 /* Bloco individual de cada foto + texto */
 .item-grade {
   display: flex;
-  flex-direction: column; /* Força o texto a ficar logo abaixo da imagem */
-  align-items: center; /* Centraliza a imagem e o texto horizontalmente dentro da coluna */
-  text-align: center; /* Garante que o texto fique centralizado */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  
+  /* Configuração da Borda e Cantos Arredondados do Bloco */
+  border: 1px solid #000000; /* Borda preta fina */
+  border-radius: 15px; /* Cantos bem arredondados */
+  padding: 15px; /* Espaço interno para o texto e foto não colarem na borda */
+  background-color: #ffffff; /* Fundo branco para destacar a borda */
 }
 
-/* Configurações para manter as imagens padronizadas e idênticas */
+/* Configurações da imagem */
 .foto-grid {
-  width: 100%; /* Ocupa 100% do espaço da coluna definida pelo Grid */
-  height: 250px; /* Altura fixa para alinhar todas na mesma linha */
-  object-fit: cover; /* Corta as fotos sem distorcer caso tenham proporções diferentes */
-  border-radius: 8px; /* Cantos levemente arredondados */
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* Corta a imagem sem distorcer */
+  
+  /* Cantos arredondados na imagem para combinar com o bloco */
+  border-radius: 10px; 
 }
 
 /* Configurações do texto descritivo */
 .legenda-grid {
-  margin-top: 12px; /* Espaço entre a imagem e o início do texto */
+  margin-top: 15px;
   font-size: 14px;
   line-height: 1.5;
   color: #333;
-  max-width: 90%; /* Evita que o texto encoste demais nas bordas horizontais */
 }
 
-/* Ajuste automático para celulares: as colunas viram 1 linha contínua vertical */
+/* Ajuste automático para celulares */
 @media (max-width: 768px) {
   .grade-container {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
   }
 }
+
 
 
 .container-video{
