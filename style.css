@@ -198,33 +198,62 @@ color:#333333;
 text-align: center;
 margin-bottom: 15px;
 }
-.livro-todos{
-display:flex;
-flex-direction: column;
-}
 
 
-.livros{
-  width: 100px;
-  height: auto;         /* Mantém a proporção da foto sem distorcer */
-  display: block;
-  border-radius: 10px;   /* Cantos arredondados */
-  align-items: center;   /* Alinha a imagem e o texto verticalmente pelo meio */
-  gap: 20px;             /* Cria um espaço entre a imagem e o texto */
-  display: flex;         /* Coloca os elementos filhos lado a lado */
-}
-
-.resumo-livros{
-  font-size: 12px;       /* Deixa o texto menor que o título */
-  font-weight: normal;   /* Remove o negrito do texto */
-  line-height: 1.5;      /* Melhora o espaçamento entre as linhas da frase */
+/* Container que envelopa o site todo */
+.livro-todos {
   display: flex;
+  flex-direction: column;
+  gap: 40px; /* Dá espaço vertical entre os blocos de livros */
+  max-width: 800px; /* Define um limite de largura confortável para ler */
+  margin: 0 auto; /* Centraliza a página na tela */
+  padding: 20px;
 }
 
-.div-livros{
-display: flex;
-justify-content: space-between;
+/* Título de cada seção do livro */
+.estudante-nome {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
+
+/* Container flexível que coloca a Foto e o Texto lado a lado */
+.div-livros {
+  display: flex;
+  justify-content: space-between; /* Empurra um para cada lado */
+  align-items: flex-start; /* Alinha os topos da imagem e do texto */
+  gap: 30px; /* Cria um espaço horizontal entre a imagem e o bloco de texto */
+}
+
+/* Caixa que segura os parágrafos de texto para que fiquem empilhados verticalmente */
+.conteudo-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Configurações da tag de Imagem */
+.livros {
+  width: 150px; /* Ajuste o tamanho se achar necessário */
+  height: auto; /* Mantém a proporção correta da capa */
+  border-radius: 5px; /* Leve arredondamento nos cantos como na foto */
+  flex-shrink: 0; /* Impede que a foto seja amassada pelo texto */
+}
+
+/* Textos padrões */
+.texto-eu {
+  margin: 0;
+  font-weight: bold;
+}
+
+.resumo-livros {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.6;
+  text-align: justify; /* Deixa as bordas do texto retas como no Word */
+  margin: 0;
+}
+
 
 .container-video{
   width: 100%;
