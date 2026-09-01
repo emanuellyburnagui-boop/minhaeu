@@ -250,8 +250,52 @@ margin-bottom: 15px;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.6;
-  text-align: justify; /* Deixa as bordas do texto retas como no Word */
+  text-align: justify; 
   margin: 0;
+}
+
+
+/* Container principal que gerencia a grade */
+.grade-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 300px)); /* Limita a largura mínima e máxima de cada coluna */
+  justify-content: center; /* Centraliza as 3 colunas perfeitamente no meio da página */
+  gap: 30px; /* Espaço entre as fotos (tanto horizontal quanto vertical) */
+  margin: 0 auto; /* Alinhamento de segurança para centralizar o bloco na tela */
+  padding: 40px 20px;
+}
+
+/* Bloco individual de cada foto + texto */
+.item-grade {
+  display: flex;
+  flex-direction: column; /* Força o texto a ficar logo abaixo da imagem */
+  align-items: center; /* Centraliza a imagem e o texto horizontalmente dentro da coluna */
+  text-align: center; /* Garante que o texto fique centralizado */
+}
+
+/* Configurações para manter as imagens padronizadas e idênticas */
+.foto-grid {
+  width: 100%; /* Ocupa 100% do espaço da coluna definida pelo Grid */
+  height: 250px; /* Altura fixa para alinhar todas na mesma linha */
+  object-fit: cover; /* Corta as fotos sem distorcer caso tenham proporções diferentes */
+  border-radius: 8px; /* Cantos levemente arredondados */
+}
+
+/* Configurações do texto descritivo */
+.legenda-grid {
+  margin-top: 12px; /* Espaço entre a imagem e o início do texto */
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  max-width: 90%; /* Evita que o texto encoste demais nas bordas horizontais */
+}
+
+/* Ajuste automático para celulares: as colunas viram 1 linha contínua vertical */
+@media (max-width: 768px) {
+  .grade-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
 }
 
 
@@ -276,6 +320,6 @@ margin-bottom: 15px;
 }
 
 .link{
-color: #000000;
+color: #ffffff;
 text-decoration: none;
 }
