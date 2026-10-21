@@ -1,15 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // ==========================================
-    // PARTE 0: MOTOR DE RENDERIZAÇÃO E ESTILOS
-    // ==========================================
-
     const CONFIG = {
         width: 800,
         height: 600,
         storageKey: 'escape_room_progression_state'
     };
 
-    // Estado Global do Jogo
     const GameState = {
         currentPhase: 1,
         inventory: [],
@@ -48,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    // Injeção de Estilos CSS Globais
     const injectStyles = () => {
         const css = `
             * { box-sizing: border-box; user-select: none; margin: 0; padding: 0; }
@@ -63,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 border-radius: 8px;
                 margin: 20px auto;
             }
-            /* Telas do Sistema */
             .screen { position: absolute; top:0; left:0; width:100%; height:100%; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 100; transition: opacity 0.5s ease; }
             #menu-screen { background: radial-gradient(circle, #2c3e50 0%, #0f171e 100%); }
             #victory-screen { background: radial-gradient(circle, #27ae60 0%, #06230f 100%); display: none; opacity: 0; }
@@ -71,10 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
             .btn { background: #e74c3c; color: white; border: none; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 30px; cursor: pointer; margin: 10px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-transform: uppercase; }
             .btn:hover { background: #c0392b; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
             .btn:disabled { background: #7f8c8d; cursor: not-allowed; transform: none; box-shadow: none; }
-            /* Cenário de Jogo */
             #stage { width: 100%; height: 500px; position: absolute; top: 0; left: 0; background: #2c3e50; overflow: hidden; transition: opacity 0.3s; }
             #phase-title { position: absolute; top: 15px; left: 15px; color: #fff; font-size: 16px; font-weight: bold; background: rgba(0,0,0,0.5); padding: 5px 15px; border-radius: 15px; pointer-events: none; z-index: 10; border-left: 3px solid #f1c40f; }
-            /* Inventário Visual */
             #inventory-bar {
                 position: absolute;
                 bottom: 0;
@@ -121,24 +112,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 animation: pulseGlow 1.5s infinite;
             }
             @keyframes pulseGlow {
-                0 { box-shadow: 0 0 5px #f1c40f; }
+                0% { box-shadow: 0 0 5px #f1c40f; }
                 50% { box-shadow: 0 0 18px #f1c40f; }
                 100% { box-shadow: 0 0 5px #f1c40f; }
             }
-            /* Elementos Visuais Gerais */
             .interactive { position: absolute; cursor: pointer; transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); display: flex; justify-content: center; align-items: center; }
             .door { width: 90px; height: 160px; background: #8e44ad; border: 4px solid #2c3e50; border-radius: 4px; bottom: 40px; left: 355px; box-shadow: inset 0 0 20px rgba(0,0,0,0.5); transform-origin: left center; z-index: 5; }
             .door::after { content: ''; position: absolute; right: 10px; top: 50%; width: 12px; height: 12px; background: #f1c40f; border-radius: 50%; }
             #btn-reset-game { position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.1); border: none; color: #999; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 11px; z-index: 15; }
             #btn-reset-game:hover { background: #e74c3c; color: white; }
         `;
-
         const styleTag = document.createElement('style');
         styleTag.innerHTML = css;
         document.head.appendChild(styleTag);
     };
 
-    // Motor de Renderização de UI Dinâmica
     const RenderEngine = {
         viewport: null,
         stage: null,
@@ -148,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
             this.viewport = document.createElement('div');
             this.viewport.id = 'game-viewport';
 
-            // Menu Screen
             const menu = document.createElement('div');
             menu.id = 'menu-screen';
             menu.className = 'screen';
@@ -159,13 +146,11 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
             this.viewport.appendChild(menu);
 
-            // Jogo Principal
             this.stage = document.createElement('div');
             this.stage.id = 'stage';
             this.stage.style.display = 'none';
             this.viewport.appendChild(this.stage);
 
-            // Barra de Inventário
             this.inventoryBar = document.createElement('div');
             this.inventoryBar.id = 'inventory-bar';
             this.inventoryBar.style.display = 'none';
@@ -179,12 +164,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             this.viewport.appendChild(this.inventoryBar);
 
-            // Tela de Vitória Final
             const victory = document.createElement('div');
             victory.id = 'victory-screen';
             victory.className = 'screen';
             victory.innerHTML = `
-                <div class="game-title">Parabéns!<br><span style="font-size:20px; color:#fff;">Você escapou das fases disponíveis!</span></div>
+                <div class="game-title">Parabéns!<br><span style="font-size:20px; color:#fff;">Você escapou de todas as 10 salas!</span></div>
                 <button class="btn" id="btn-restart">Jogar Novamente</button>
             `;
             this.viewport.appendChild(victory);
@@ -225,19 +209,22 @@ document.addEventListener("DOMContentLoaded", function () {
         },
 
         transitionOutMenu() {
-const menu = document.getElementById('menu-screen');
-menu.style.opacity = '0';
-setTimeout(() => {
-menu.style.display = 'none';
-this.stage.style.display = 'block';
-this.inventoryBar.style.display = 'flex';
-this.loadPhase(GameState.currentPhase);
-}, 500);
-},
-updateInventoryUI() {
-const slots = this.inventoryBar.querySelectorAll('.inv-slot');
-slots.forEach((slot, index) => {
-slot.innerHTML = '';
+            const menu = document.getElementById('menu-screen');
+            menu.style.opacity = '0';
+
+            setTimeout(() => {
+                menu.style.display = 'none';
+                this.stage.style.display = 'block';
+                this.inventoryBar.style.display = 'flex';
+                this.loadPhase(GameState.currentPhase);
+            }, 500);
+        },
+
+        updateInventoryUI() {
+            const slots = this.inventoryBar.querySelectorAll('.inv-slot');
+
+            slots.forEach((slot, index) => {
+                slot.innerHTML = '';
 slot.classList.remove('selected');
 if (GameState.inventory[index]) {
 const item = GameState.inventory[index];
@@ -289,7 +276,7 @@ location.reload();
 }
 });
 this.stage.appendChild(btnReset);
-if (phaseNum > 9) {
+if (phaseNum > 10) {
 this.stage.style.display = 'none';
 this.inventoryBar.style.display = 'none';
 const vic = document.getElementById('victory-screen');
@@ -317,13 +304,10 @@ this.stage.style.opacity = '1';
 }, 800);
 }
 };
-// ==========================================
-// PARTE 1: CATÁLOGO DE FASES (1 A 9)
-// ==========================================
 const PhaseCatalog = {};
-// Fase 1: O Escritório Trancado
+// FASE 1: O Escritório Trancado (Muito Fácil)
 PhaseCatalog[1] = function (stage) {
-document.getElementById('phase-title').innerText = "Fase 1: O Escritório Trancado (Fácil)";
+document.getElementById('phase-title').innerText = "Fase 1: O Escritório Trancado (Muito Fácil)";
 stage.style.backgroundColor = "#34495e";
 GameState.phaseData = { paintingMoved: false, keyCollected: false };
 const door = document.createElement('div');
@@ -373,7 +357,7 @@ RenderEngine.triggerExitAnimation(door, 2);
 }
 });
 };
-// Fase 2: O Sótão Esquecido
+// FASE 2: O Sótão Esquecido (Fácil)
 PhaseCatalog[2] = function (stage) {
 document.getElementById('phase-title').innerText = "Fase 2: O Sótão Esquecido (Fácil)";
 stage.style.backgroundColor = "#2c2c2c";
@@ -431,7 +415,7 @@ RenderEngine.triggerExitAnimation(door, 3);
 }
 });
 };
-// Fase 3: O Laboratório de Botânica
+// FASE 3: O Laboratório de Botânica (Fácil)
 PhaseCatalog[3] = function (stage) {
 document.getElementById('phase-title').innerText = "Fase 3: O Laboratório de Botânica (Fácil)";
 stage.style.backgroundColor = "#1e3020";
@@ -475,7 +459,7 @@ RenderEngine.triggerExitAnimation(door, 4);
 }
 });
 };
-// Fase 4: A Cabine de Comando
+// FASE 4: A Cabine de Comando (Fácil)
 PhaseCatalog[4] = function (stage) {
 document.getElementById('phase-title').innerText = "Fase 4: A Cabine de Comando (Fácil)";
 stage.style.backgroundColor = "#2c3e50";
@@ -512,7 +496,7 @@ RenderEngine.triggerExitAnimation(door, 5);
 }
 });
 };
-// Fase 5: O Camarim de Teatro
+// FASE 5: O Camarim de Teatro (Fácil)
 PhaseCatalog[5] = function (stage) {
 document.getElementById('phase-title').innerText = "Fase 5: O Camarim de Teatro (Fácil)";
 stage.style.backgroundColor = "#4a235a";
@@ -571,7 +555,7 @@ RenderEngine.triggerExitAnimation(door, 6);
 }
 });
 };
-// Fase 6: O Painel Elétrico
+// FASE 6: O Painel Elétrico (Médio)
 PhaseCatalog[6] = function (stage) {
 document.getElementById('phase-title').innerText = "Fase 6: O Painel Elétrico (Médio)";
 stage.style.backgroundColor = "#2e4053";
@@ -610,11 +594,11 @@ RenderEngine.triggerExitAnimation(door, 7);
 }
 });
 };
-// Fase 7: O Encanamento Hidráulico
+// FASE 7: O Encanamento Hidráulico (Médio)
 PhaseCatalog[7] = function (stage) {
 document.getElementById('phase-title').innerText = "Fase 7: O Encanamento Hidráulico (Médio)";
 stage.style.backgroundColor = "#212f3d";
-GameState.phaseData = { rotations: [0, 90, 180] };
+GameState.phaseData = { rotations:, completed: false };
 const door = document.createElement('div');
 door.className = 'interactive door';
 stage.appendChild(door);
@@ -624,12 +608,13 @@ door.style.borderColor = '#27ae60';
 GameState.phaseData.completed = true;
 } else {
 GameState.phaseData.completed = false;
+door.style.borderColor = 'transparent';
 }
 };
 for (let i = 0; i < 3; i++) {
 const pipe = document.createElement('div');
 pipe.className = 'interactive';
-pipe.style.cssText = width:80px; height:80px; background:#566573; border:4px solid #34495e; left:${200 + i * 100}px; top:220px; transition:transform .3s; transform:rotate(${GameState.phaseData.rotations[i]}deg); color: white; font-weight:bold;;
+pipe.style.cssText = width:80px; height:80px; background:#566573; border:4px solid #34495e; left:${200 + i * 100}px; top:220px; transition:transform .3s; transform:rotate(${GameState.phaseData.rotations[i]}deg); color: white; font-weight:bold; font-size:24px;;
 pipe.innerText = "═";
 stage.appendChild(pipe);
 pipe.addEventListener('click', () => {
@@ -645,7 +630,7 @@ RenderEngine.triggerExitAnimation(door, 8);
 }
 });
 };
-// Fase 8: A Sala de Segurança
+// FASE 8: A Sala de Segurança (Médio)
 PhaseCatalog[8] = function (stage) {
 document.getElementById('phase-title').innerText = "Fase 8: A Sala de Segurança (Médio)";
 stage.style.backgroundColor = "#1b2631";
@@ -655,7 +640,7 @@ door.className = 'interactive door';
 stage.appendChild(door);
 const keycardSlot = document.createElement('div');
 keycardSlot.className = 'interactive';
-keycardSlot.style.cssText = 'width:60px; height:80px; background:#5d6d7e; border:3px solid #2e4053; left:300px; top:200px; color:white; font-size:10px; text-align:center;';
+keycardSlot.style.cssText = 'width:70px; height:90px; background:#5d6d7e; border:3px solid #2e4053; left:300px; top:200px; color:white; font-size:10px; text-align:center; padding:5px;';
 keycardSlot.innerText = "INSERIR BATERIA";
 stage.appendChild(keycardSlot);
 const drawer = document.createElement('div');
@@ -692,9 +677,9 @@ RenderEngine.triggerExitAnimation(door, 9);
 }
 });
 };
-// Fase 9: A Central de Redes
+// FASE 9: A Central de Redes (Difícil)
 PhaseCatalog[9] = function (stage) {
-document.getElementById('phase-title').innerText = "Fase 9: A Central de Redes (Médio)";
+document.getElementById('phase-title').innerText = "Fase 9: A Central de Redes (Difícil)";
 stage.style.backgroundColor = "#17202a";
 GameState.phaseData = { connected: false };
 const door = document.createElement('div');
@@ -744,7 +729,74 @@ RenderEngine.triggerExitAnimation(door, 10);
 }
 });
 };
-// Inicialização Inicial do Sistema
+// FASE 10: O Cofre Criptográfico (Desafio Final)
+PhaseCatalog[10] = function (stage) {
+document.getElementById('phase-title').innerText = "Fase 10: O Cofre Criptográfico (Desafio Final)";
+stage.style.backgroundColor = "#11161b";
+GameState.phaseData = { currentCode: "", targetCode: "2026", solved: false };
+const door = document.createElement('div');
+door.className = 'interactive door';
+stage.appendChild(door);
+const vault = document.createElement('div');
+vault.style.cssText = 'position:absolute; width:260px; height:280px; background:#2c3e50; border:6px solid #7f8c8d; left:80px; top:120px; border-radius:10px; display:flex; flex-direction:column; align-items:center; padding:15px;';
+stage.appendChild(vault);
+const display = document.createElement('div');
+display.style.cssText = 'width:100%; height:50px; background:#111; color:#0f0; font-family:monospace; font-size:24px; display:flex; justify-content:center; align-items:center; border-radius:5px; margin-bottom:15px; border:2px solid #555; letter-spacing:4px;';
+display.innerText = "____";
+vault.appendChild(display);
+const hint = document.createElement('div');
+hint.style.cssText = 'position:absolute; font-size:12px; color:#555; left:600px; top:150px; border:1px dashed #444; padding:10px; font-family:monospace;';
+hint.innerHTML = "DICA: O ano impresso no rodapé dos seus direitos autorais.";
+stage.appendChild(hint);
+const keypad = document.createElement('div');
+keypad.style.cssText = 'display:grid; grid-template-columns: repeat(3, 50px); gap:8px;';
+vault.appendChild(keypad);
+const buttons = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "CLR", "0", "ENT"];
+buttons.forEach(txt => {
+const btn = document.createElement('button');
+btn.style.cssText = 'height:40px; background:#34495e; color:white; border:none; border-radius:4px; font-weight:bold; cursor:pointer; font-size:14px;';
+btn.innerText = txt;
+keypad.appendChild(btn);
+btn.addEventListener('click', () => {
+if (GameState.phaseData.solved) return;
+if (txt === "CLR") {
+GameState.phaseData.currentCode = "";
+} else if (txt === "ENT") {
+if (GameState.phaseData.currentCode === GameState.phaseData.targetCode) {
+display.innerText = "OPEN";
+display.style.color = "#27ae60";
+GameState.phaseData.solved = true;
+door.style.borderColor = '#27ae60';
+} else {
+display.innerText = "ERR";
+display.style.color = "#c0392b";
+setTimeout(() => {
+if (!GameState.phaseData.solved) {
+GameState.phaseData.currentCode = "";
+display.innerText = "____";
+display.style.color = "#0f0";
+}
+}, 800);
+}
+return;
+} else {
+if (GameState.phaseData.currentCode.length < 4) {
+GameState.phaseData.currentCode += txt;
+}
+}
+let displayStr = GameState.phaseData.currentCode;
+while (displayStr.length < 4) displayStr += "_";
+if (!GameState.phaseData.solved && display.innerText !== "ERR") {
+display.innerText = displayStr;
+}
+});
+});
+door.addEventListener('click', () => {
+if (GameState.phaseData.solved) {
+RenderEngine.triggerExitAnimation(door, 11);
+}
+});
+};
 injectStyles();
 GameState.init();
 RenderEngine.buildBaseDOM();
