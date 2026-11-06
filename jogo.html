@@ -27,11 +27,39 @@
         <img class="sociais" src="instagram.png" alt="Logo do meu insta">
     </div>
 </header>
+<!-- SEÇÃO CENTRAL DO JOGO -->
+<section class="game-section-container">
+  <div id="escape-game-project-root">
+    
+    <!-- Estrutura síncrona fixa para evitar tela preta -->
+    <div id="escape-game-container"> 
+      <div class="game-header"> 
+        <h2 class="game-title" id="game-title-el">Fase 1: O Quarto Escuro</h2> 
+        <button class="fullscreen-btn" id="toggle-fs">🖥️ Tela Cheia</button> 
+      </div> 
+      <div class="game-body"> 
+        <div class="room-view"> 
+          <div class="room-description" id="room-desc-el">Carregando cenário...</div> 
+          <div class="interaction-zone" id="interaction-zone-el">
+            <!-- Botões dinâmicos entrarão aqui -->
+          </div> 
+        </div> 
+        <div class="sidebar"> 
+          <h3>Inventário</h3> 
+          <ul class="inventory-list" id="inventory-list-el">
+            <li class="inventory-item-empty">Vazio</li>
+          </ul> 
+          <div class="history-wrapper"> 
+            <h3>Histórico</h3> 
+            <div class="game-log" id="game-log-el"></div> 
+          </div> 
+        </div> 
+      </div> 
+    </div>
 
-<section id="area-jogo">
-    <h2>Escape Room</h2>
-
+  </div>
 </section>
+
 
 <footer class="escola">
     <img class="logo_rodape" src="WhatsApp Image 2026-06-21 at 16.48.56.jpeg" alt="minha foto">
@@ -39,6 +67,6 @@
     <p>©2026 | Curso de ADS | Todos os Direitos Reservados. Política de Privacidade | Estudante de DS</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
-<script src="script.js"></script>
