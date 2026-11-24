@@ -307,6 +307,75 @@ margin-bottom: 15px;
 
 
 
+/*cards dos livros*/
+.estante {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.cartao-livro {
+  width: 240px;
+  height: 360px;
+  perspective: 1000px; /* Dá a profundidade */
+  cursor: pointer;
+}
+
+.cartao-interno {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+
+/* Gira quando recebe a classe via JS */
+.cartao-livro.virado .cartao-interno {
+  transform: rotateY(180deg);
+}
+
+.frente, .verso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Esconde o verso enquanto está de frente */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.frente img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.verso {
+  background-color: #1e1e24;
+  color: #ffffff;
+  transform: rotateY(180deg); 
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.verso h3 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.verso p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+
 .container-video{
   width: 100%;
   height: auto;

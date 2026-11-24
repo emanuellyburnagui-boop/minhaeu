@@ -289,3 +289,17 @@ document.addEventListener("DOMContentLoaded", init);
 init();
 }
 })();
+
+
+/*cards dos livros*/
+const cartoes = document.querySelectorAll('.cartao-livro');
+
+cartoes.forEach(cartao => {
+  cartao.addEventListener('mouseenter', () => {
+    cartao.classList.add('virado');
+  });
+
+  cartao.addEventListener('mouseleave', () => {
+    cartao.classList.remove('virado');
+  });
+});
