@@ -11,6 +11,10 @@ cartoes.forEach(cartao => {
   });
 });
 
+ cartao.addEventListener('click', () => {
+    // Alterna entre frente e verso a cada toque
+    cartao.classList.toggle('virado');
+  });
 
 
 
